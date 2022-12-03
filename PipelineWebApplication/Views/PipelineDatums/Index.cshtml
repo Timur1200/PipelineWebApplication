@@ -1,0 +1,161 @@
+﻿@model IEnumerable<PipelineWebApplication.Models.PipelineDatum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SignDouble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TieInPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptimizedLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purpose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransportedMedium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlowsheetNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DebitWater)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DebitOil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Temperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PFact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PCalculated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Field)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionControl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionStart)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody> 
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SignDouble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieInPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptimizedLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purpose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransportedMedium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlowsheetNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebitWater)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DebitOil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Temperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PFact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PCalculated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brigade.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Field.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionControl.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionEnd.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionStart.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="PipelinePassports" asp-action="Index" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

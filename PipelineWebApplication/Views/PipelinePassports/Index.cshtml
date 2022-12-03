@@ -1,0 +1,180 @@
+﻿@model IEnumerable<PipelineWebApplication.Models.PipelinePassport>
+
+@{
+    ViewData["Title"] = "Index";
+    //asp-route-id="0"
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" >Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlotStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlotEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lenght)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diameter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ТолщинаСтенки)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ГлубинаУкладки)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateInternalCoating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.НаружноеПокрытие)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидСтроительства)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.НаличиеОтклоненияОтПроекта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.СтоимостьСтроительства)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ЗаменаСтыков1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ЗаменаСтыков2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Количество)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ДатаЗаменыСтыков)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuildingCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FactoryMpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FactoryPipe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InternalCoating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PipeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PipelineData)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlotStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlotEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lenght)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diameter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ТолщинаСтенки)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ГлубинаУкладки)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateInternalCoating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НаружноеПокрытие)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ВидСтроительства)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.НаличиеОтклоненияОтПроекта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.СтоимостьСтроительства)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ЗаменаСтыков1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ЗаменаСтыков2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаЗаменыСтыков)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingCompany.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FactoryMpt.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FactoryPipe.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalCoating.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PipeType.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PipelineData.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

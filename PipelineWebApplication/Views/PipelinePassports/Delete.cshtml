@@ -1,0 +1,171 @@
+﻿@model PipelineWebApplication.Models.PipelinePassport
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PipelinePassport</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlotStart)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlotStart)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlotEnd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlotEnd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lenght)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lenght)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Diameter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Diameter)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ТолщинаСтенки)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ТолщинаСтенки)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ГлубинаУкладки)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ГлубинаУкладки)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateInternalCoating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateInternalCoating)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.НаружноеПокрытие)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.НаружноеПокрытие)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидСтроительства)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ВидСтроительства)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.НаличиеОтклоненияОтПроекта)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.НаличиеОтклоненияОтПроекта)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.СтоимостьСтроительства)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.СтоимостьСтроительства)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ЗаменаСтыков1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ЗаменаСтыков1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ЗаменаСтыков2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ЗаменаСтыков2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Количество)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Количество)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ДатаЗаменыСтыков)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ДатаЗаменыСтыков)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BuildingCompany)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BuildingCompany.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FactoryMpt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FactoryMpt.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FactoryPipe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FactoryPipe.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InternalCoating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InternalCoating.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Material)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Material.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PipeType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PipeType.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PipelineData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PipelineData.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

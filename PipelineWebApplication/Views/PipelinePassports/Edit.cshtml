@@ -1,0 +1,154 @@
+﻿@model PipelineWebApplication.Models.PipelinePassport
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PipelinePassport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FactoryMptid" class="control-label"></label>
+                <select asp-for="FactoryMptid" class="form-control" asp-items="ViewBag.FactoryMptid"></select>
+                <span asp-validation-for="FactoryMptid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FactoryPipeId" class="control-label"></label>
+                <select asp-for="FactoryPipeId" class="form-control" asp-items="ViewBag.FactoryPipeId"></select>
+                <span asp-validation-for="FactoryPipeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuildingCompanyId" class="control-label"></label>
+                <select asp-for="BuildingCompanyId" class="form-control" asp-items="ViewBag.BuildingCompanyId"></select>
+                <span asp-validation-for="BuildingCompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaterialId" class="control-label"></label>
+                <select asp-for="MaterialId" class="form-control" asp-items="ViewBag.MaterialId"></select>
+                <span asp-validation-for="MaterialId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternalCoatingId" class="control-label"></label>
+                <select asp-for="InternalCoatingId" class="form-control" asp-items="ViewBag.InternalCoatingId"></select>
+                <span asp-validation-for="InternalCoatingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PipeTypeId" class="control-label"></label>
+                <select asp-for="PipeTypeId" class="form-control" asp-items="ViewBag.PipeTypeId"></select>
+                <span asp-validation-for="PipeTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PipelineDataId" class="control-label"></label>
+                <select asp-for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
+                <span asp-validation-for="PipelineDataId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlotStart" class="control-label"></label>
+                <input asp-for="PlotStart" class="form-control" />
+                <span asp-validation-for="PlotStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlotEnd" class="control-label"></label>
+                <input asp-for="PlotEnd" class="form-control" />
+                <span asp-validation-for="PlotEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lenght" class="control-label"></label>
+                <input asp-for="Lenght" class="form-control" />
+                <span asp-validation-for="Lenght" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diameter" class="control-label"></label>
+                <input asp-for="Diameter" class="form-control" />
+                <span asp-validation-for="Diameter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ТолщинаСтенки" class="control-label"></label>
+                <input asp-for="ТолщинаСтенки" class="form-control" />
+                <span asp-validation-for="ТолщинаСтенки" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ГлубинаУкладки" class="control-label"></label>
+                <input asp-for="ГлубинаУкладки" class="form-control" />
+                <span asp-validation-for="ГлубинаУкладки" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateInternalCoating" class="control-label"></label>
+                <input asp-for="DateInternalCoating" class="form-control" />
+                <span asp-validation-for="DateInternalCoating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="НаружноеПокрытие" class="control-label"></label>
+                <input asp-for="НаружноеПокрытие" class="form-control" />
+                <span asp-validation-for="НаружноеПокрытие" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидСтроительства" class="control-label"></label>
+                <input asp-for="ВидСтроительства" class="form-control" />
+                <span asp-validation-for="ВидСтроительства" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="НаличиеОтклоненияОтПроекта" class="control-label"></label>
+                <input asp-for="НаличиеОтклоненияОтПроекта" class="form-control" />
+                <span asp-validation-for="НаличиеОтклоненияОтПроекта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="СтоимостьСтроительства" class="control-label"></label>
+                <input asp-for="СтоимостьСтроительства" class="form-control" />
+                <span asp-validation-for="СтоимостьСтроительства" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ЗаменаСтыков1" class="control-label"></label>
+                <input asp-for="ЗаменаСтыков1" class="form-control" />
+                <span asp-validation-for="ЗаменаСтыков1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ЗаменаСтыков2" class="control-label"></label>
+                <input asp-for="ЗаменаСтыков2" class="form-control" />
+                <span asp-validation-for="ЗаменаСтыков2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Количество" class="control-label"></label>
+                <input asp-for="Количество" class="form-control" />
+                <span asp-validation-for="Количество" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ДатаЗаменыСтыков" class="control-label"></label>
+                <input asp-for="ДатаЗаменыСтыков" class="form-control" />
+                <span asp-validation-for="ДатаЗаменыСтыков" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

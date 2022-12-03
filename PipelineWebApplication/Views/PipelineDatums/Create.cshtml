@@ -1,0 +1,158 @@
+﻿@model PipelineWebApplication.Models.PipelineDatum
+
+@{
+    ViewData["Title"] = "Создание трубопровода";
+   
+}
+
+
+   
+
+
+<h1>Создать</h1>
+
+<h4>Данные трубопровода и их технических характеристик</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BrigadeId" class="control-label"></label>
+                <select id="BrigadeSelect" asp-for="BrigadeId" class ="form-control" asp-items="ViewBag.BrigadeId">
+                    <option selected disabled="true">Выберите бригаду</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FieldId" class="control-label"></label>
+                <select id="FieldSelect" asp-for="FieldId" class="form-control" asp-items="ViewBag.FieldId"> 
+                    <option selected disabled="true">Выберите месторождение</option>
+                </select>
+                <span asp-validation-for="Name" class="text-danger" ></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegionStartId"  class="control-label"></label>
+                <select  asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegionEndId" class="control-label"></label>
+                <select asp-for="RegionEndId" class ="form-control" asp-items="ViewBag.RegionEndId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegionControlId" class="control-label"></label>
+                <select asp-for="RegionControlId" class ="form-control" asp-items="ViewBag.RegionControlId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SignDouble" class="control-label"></label>
+                <input asp-for="SignDouble" class="form-control" />
+                <span asp-validation-for="SignDouble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TieInPlace" class="control-label"></label>
+                <input asp-for="TieInPlace" class="form-control" />
+                <span asp-validation-for="TieInPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Length" class="control-label"></label>
+                <input asp-for="Length" class="form-control" />
+                <span asp-validation-for="Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OptimizedLength" class="control-label"></label>
+                <input asp-for="OptimizedLength" class="form-control" />
+                <span asp-validation-for="OptimizedLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input type="date" asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purpose" class="control-label"></label>
+                <input asp-for="Purpose" class="form-control" />
+                <span asp-validation-for="Purpose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportedMedium" class="control-label"></label>
+                <input asp-for="TransportedMedium" class="form-control" />
+                <span asp-validation-for="TransportedMedium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlowsheetNumber" class="control-label"></label>
+                <input asp-for="FlowsheetNumber" class="form-control" />
+                <span asp-validation-for="FlowsheetNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DebitWater" class="control-label"></label>
+                <input asp-for="DebitWater" class="form-control" />
+                <span asp-validation-for="DebitWater" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DebitOil" class="control-label"></label>
+                <input asp-for="DebitOil" class="form-control" />
+                <span asp-validation-for="DebitOil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Temperature" class="control-label"></label>
+                <input asp-for="Temperature" class="form-control" />
+                <span asp-validation-for="Temperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PFact" class="control-label"></label>
+                <input asp-for="PFact" class="form-control" />
+                <span asp-validation-for="PFact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PCalculated" class="control-label"></label>
+                <input asp-for="PCalculated" class="form-control" />
+                <span asp-validation-for="PCalculated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript">
+        $(document).ready(function () 
+        {
+            $('#FieldSelect').select2({
+            });
+
+            $('#BrigadeSelect').select2({
+            });
+        });
+    </script>
+   
+}
