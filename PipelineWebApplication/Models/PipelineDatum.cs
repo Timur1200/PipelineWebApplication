@@ -4,10 +4,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PipelineWebApplication.Models;
 
+/// <summary>
+/// Данные трубопровода
+/// </summary>
 public partial class PipelineDatum
 {
     public int Id { get; set; }
 
+    /// <summary>
+    /// Код бригады
+    /// </summary>
     [Display(Name= "Бригада")]
     public int? BrigadeId { get; set; }
 

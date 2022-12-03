@@ -61,9 +61,9 @@ namespace PipelineWebApplication.Controllers
         // GET: PipelinePassports/Create
         public IActionResult Create()
         {
-            ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Id");
-            ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Id");
-            ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Id");
+            ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Name");
+            ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Name");
+            ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Name");
             ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Id");
             ViewData["MaterialId"] = new SelectList(_context.Materials, "Id", "Id");
             ViewData["PipeTypeId"] = new SelectList(_context.PipeTypes, "Id", "Id");
