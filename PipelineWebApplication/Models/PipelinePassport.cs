@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace PipelineWebApplication.Models;
 
+/// <summary>
+/// Пспорт трубопровода
+/// </summary>
 public partial class PipelinePassport
 {
     public int Id { get; set; }

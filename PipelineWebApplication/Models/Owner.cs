@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 
 namespace PipelineWebApplication.Models;
-
+/// <summary>
+/// Владелец
+/// </summary>
 public partial class Owner
 {
     public int Id { get; set; }

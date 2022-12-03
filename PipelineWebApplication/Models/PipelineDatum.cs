@@ -20,10 +20,13 @@ public partial class PipelineDatum
     [Display(Name = "Месторождение")]
     public int? FieldId { get; set; }
 
+    [Display(Name = "Объект начала")]
     public int? RegionStartId { get; set; }
 
+    [Display(Name = "Объект конца")]
     public int? RegionEndId { get; set; }
 
+    [Display(Name = "Контрольный объект")]
     public int? RegionControlId { get; set; }
 
     public string Name { get; set; } = null!;
