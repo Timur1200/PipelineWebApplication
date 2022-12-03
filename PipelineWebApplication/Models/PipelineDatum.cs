@@ -59,7 +59,7 @@ public partial class PipelineDatum
     /// <summary>
     /// длина
     /// </summary>
-    [Display(Name = "Длмна")]
+    [Display(Name = "Длина")]
     public double? Length { get; set; }
 
     /// <summary>
