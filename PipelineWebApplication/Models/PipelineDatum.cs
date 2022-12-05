@@ -61,7 +61,7 @@ public partial class PipelineDatum
     /// </summary>
     [Display(Name = "Длина")]
     public double? Length { get; set; }
-    public double? Length { get; set; } 
+   
 
     /// <summary>
     /// оптимизир. длина
