@@ -32,15 +32,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="RegionStartId"  class="control-label"></label>
-                <select  asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId"></select>
+                <select id="RegionStartIdSelect" asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId">
+                    <option selected disabled="true">Выберите объект начала</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="RegionEndId" class="control-label"></label>
-                <select asp-for="RegionEndId" class ="form-control" asp-items="ViewBag.RegionEndId"></select>
+                <select id="RegionEndIdSelect" asp-for="RegionEndId" class="form-control" asp-items="ViewBag.RegionEndId">
+                    <option selected disabled="true">Выберите объект конца</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="RegionControlId" class="control-label"></label>
-                <select asp-for="RegionControlId" class ="form-control" asp-items="ViewBag.RegionControlId"></select>
+                <select id="RegionControlIdSelect" asp-for="RegionControlId" class="form-control" asp-items="ViewBag.RegionControlId">
+                    <option selected disabled="true">Выберите контрольный объект</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -49,12 +55,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="SignDouble" class="control-label"></label>
-                <input asp-for="SignDouble" class="form-control" />
+                <input asp-for="SignDouble" class="form-control" placeholder="0" />
                 <span asp-validation-for="SignDouble" class="text-danger"></span>
+         
             </div>
             <div class="form-group">
                 <label asp-for="TieInPlace" class="control-label"></label>
-                <input asp-for="TieInPlace" class="form-control" />
+                <input asp-for="TieInPlace" class="form-control" type="number" maxlength="10" placeholder="0" />
                 <span asp-validation-for="TieInPlace" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -128,14 +135,14 @@
                 <span asp-validation-for="PCalculated" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Вернуться обратно</a>
 </div>
 
 @section Scripts {
@@ -151,6 +158,15 @@
             });
 
             $('#BrigadeSelect').select2({
+            });
+
+            $('#RegionStartIdSelect').select2({
+            });
+
+            $('#RegionEndIdSelect').select2({
+            });
+
+            $('#RegionControlIdSelect').select2({
             });
         });
     </script>
