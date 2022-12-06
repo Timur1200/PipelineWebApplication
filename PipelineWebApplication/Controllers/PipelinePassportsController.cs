@@ -123,7 +123,7 @@ namespace PipelineWebApplication.Controllers
             {
                 return NotFound();
             }
-            ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Id", pipelinePassport.BuildingCompanyId);
+            ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Name", pipelinePassport.BuildingCompanyId);
             ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Id", pipelinePassport.FactoryMptid);
             ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Id", pipelinePassport.FactoryPipeId);
             ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Id", pipelinePassport.InternalCoatingId);
