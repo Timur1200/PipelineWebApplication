@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PipelineWebApplication.Data;
 using PipelineWebApplication.Models;
+using PipelineWebApplication.Models.ViewModel;
 
 namespace PipelineWebApplication.Controllers
 {
@@ -20,17 +21,34 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelinePassports
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id,string PipelineDataId, string searchString)
         {
-            if (id == null || _context.PipelinePassports == null)
-            {
-                return NotFound();
-            }
-
-            var pipelineAccountingContext = _context.PipelinePassports.Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
-                .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType).Include(p => p.PipelineData).Where(p =>p.PipelineDataId==id);
             
+            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
+
+            IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports.Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
+                 .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType).Include(p => p.PipelineData);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //pipelinePassport = pipelinePassport.Where(q=>q.)
+            }
+            if (!string.IsNullOrEmpty(PipelineDataId))
+            {
+                int currentPipelineDataId = Convert.ToInt32(PipelineDataId);
+                pipelineAccountingContext = pipelineAccountingContext.Where(p => p.PipelineDataId == currentPipelineDataId);
+            }
+            
+            
+            if (id != null)
+            {
+                pipelineAccountingContext = pipelineAccountingContext.Where(p => p.PipelineDataId == id);
+            }   
             return View(await pipelineAccountingContext.ToListAsync());
+        }
+        [HttpPost]
+        public string Index(string PipelineName, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + PipelineName;
         }
 
         // GET: PipelinePassports/Details/5
@@ -61,13 +79,14 @@ namespace PipelineWebApplication.Controllers
         // GET: PipelinePassports/Create
         public IActionResult Create()
         {
+
             ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Name");
             ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Name");
             ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Name");
-            ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Id");
-            ViewData["MaterialId"] = new SelectList(_context.Materials, "Id", "Id");
-            ViewData["PipeTypeId"] = new SelectList(_context.PipeTypes, "Id", "Id");
-            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Id");
+            ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Name");
+            ViewData["MaterialId"] = new SelectList(_context.Materials, "Id", "Name");
+            ViewData["PipeTypeId"] = new SelectList(_context.PipeTypes, "Id", "Name");
+            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
             return View();
         }
 

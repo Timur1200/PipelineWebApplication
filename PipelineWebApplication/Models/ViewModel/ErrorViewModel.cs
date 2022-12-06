@@ -1,4 +1,4 @@
-namespace PipelineWebApplication.Models
+namespace PipelineWebApplication.Models.ViewModel
 {
     public class ErrorViewModel
     {

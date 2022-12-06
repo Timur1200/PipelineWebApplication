@@ -1,5 +1,8 @@
+global using PipelineWebApplication.Models;
+global using PipelineWebApplication.Data;
+global using PipelineWebApplication.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
-using PipelineWebApplication.Data;
+
 
 namespace PipelineWebApplication
 {

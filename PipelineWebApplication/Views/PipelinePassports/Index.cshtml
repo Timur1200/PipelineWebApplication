@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<PipelineWebApplication.Models.PipelinePassport>
 
+
 @{
     ViewData["Title"] = "Index";
     //asp-route-id="0"
@@ -10,6 +11,13 @@
 <p>
     <a asp-action="Create" >Добавить</a>
 </p>
+<form  asp-action="Index">
+    <p>
+        <label for="PipelineDataId" class="control-label"></label>
+        <select name="PipelineName" for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

@@ -53,7 +53,7 @@ public partial class PipelinePassport
     /// <summary>
     /// 
     /// </summary>
-    [Display(Name = "")]
+    [Display(Name = "Данные трубопровода")]
     public int? PipelineDataId { get; set; }
 
     /// <summary>
