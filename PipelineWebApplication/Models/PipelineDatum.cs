@@ -14,7 +14,7 @@ public partial class PipelineDatum
     /// <summary>
     /// Код бригады
     /// </summary>
-    [Display(Name= "Бригада")]
+    [Display(Name= "Владелец")]
     public int? BrigadeId { get; set; }
 
     /// <summary>

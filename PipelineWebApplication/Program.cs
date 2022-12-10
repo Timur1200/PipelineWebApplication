@@ -21,9 +21,7 @@ namespace PipelineWebApplication
            
 
 
-          //  builder.Services.AddDbContext<Models.PipelineAccountingContext>(options =>
-           //     options.UseNpgsql("Host=localhost;Port=5432;Database=PipelineAccounting;Username=postgres;Password=123"));
-            // Configure the HTTP request pipeline.
+        
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

@@ -75,11 +75,11 @@ namespace PipelineWebApplication.Controllers
             {
                 return NotFound();
             }
-            ViewData["BrigadeId"] = new SelectList(_context.Brigades, "Id", "Id", pipelineDatum.BrigadeId);
-            ViewData["FieldId"] = new SelectList(_context.Fields, "Id", "Id", pipelineDatum.FieldId);
-            ViewData["RegionControlId"] = new SelectList(_context.Regions, "Id", "Id", pipelineDatum.RegionControlId);
-            ViewData["RegionEndId"] = new SelectList(_context.Regions, "Id", "Id", pipelineDatum.RegionEndId);
-            ViewData["RegionStartId"] = new SelectList(_context.Regions, "Id", "Id", pipelineDatum.RegionStartId);
+            ViewData["BrigadeId"] = new SelectList(_context.Brigades.Include(q => q.Unit.Owner), "Id", "FullName", pipelineDatum.BrigadeId);
+            ViewData["FieldId"] = new SelectList(_context.Fields, "Id", "Name", pipelineDatum.FieldId);
+            ViewData["RegionControlId"] = new SelectList(_context.Regions, "Id", "Name", pipelineDatum.RegionControlId);
+            ViewData["RegionEndId"] = new SelectList(_context.Regions, "Id", "Name", pipelineDatum.RegionEndId);
+            ViewData["RegionStartId"] = new SelectList(_context.Regions, "Id", "Name", pipelineDatum.RegionStartId);
             return View(pipelineDatum);
         }
 

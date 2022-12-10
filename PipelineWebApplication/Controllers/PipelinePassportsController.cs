@@ -124,12 +124,12 @@ namespace PipelineWebApplication.Controllers
                 return NotFound();
             }
             ViewData["BuildingCompanyId"] = new SelectList(_context.BuildingСompanies, "Id", "Name", pipelinePassport.BuildingCompanyId);
-            ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Id", pipelinePassport.FactoryMptid);
-            ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Id", pipelinePassport.FactoryPipeId);
-            ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Id", pipelinePassport.InternalCoatingId);
-            ViewData["MaterialId"] = new SelectList(_context.Materials, "Id", "Id", pipelinePassport.MaterialId);
-            ViewData["PipeTypeId"] = new SelectList(_context.PipeTypes, "Id", "Id", pipelinePassport.PipeTypeId);
-            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Id", pipelinePassport.PipelineDataId);
+            ViewData["FactoryMptid"] = new SelectList(_context.Factories, "Id", "Name", pipelinePassport.FactoryMptid);
+            ViewData["FactoryPipeId"] = new SelectList(_context.Factories, "Id", "Name", pipelinePassport.FactoryPipeId);
+            ViewData["InternalCoatingId"] = new SelectList(_context.InternalСoatings, "Id", "Name", pipelinePassport.InternalCoatingId);
+            ViewData["MaterialId"] = new SelectList(_context.Materials, "Id", "Name", pipelinePassport.MaterialId);
+            ViewData["PipeTypeId"] = new SelectList(_context.PipeTypes, "Id", "Name", pipelinePassport.PipeTypeId);
+            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name", pipelinePassport.PipelineDataId);
             return View(pipelinePassport);
         }
 
