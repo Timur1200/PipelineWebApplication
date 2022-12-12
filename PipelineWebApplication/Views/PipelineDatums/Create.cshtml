@@ -14,137 +14,138 @@
 <h4>Данные трубопровода и их технических характеристик</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="BrigadeId" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="BrigadeId" class="control-label w-25"></label>
                 <select id="BrigadeSelect" asp-for="BrigadeId" class ="form-control" asp-items="ViewBag.BrigadeId" >
                     <option selected disabled="true">Выберите бригаду</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label asp-for="FieldId" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="FieldId" class="control-label w-25"></label>
                 <select id="FieldSelect" asp-for="FieldId" class="form-control" asp-items="ViewBag.FieldId"> 
                     <option selected disabled="true">Выберите месторождение</option>
                 </select>
                 <span asp-validation-for="Name" class="text-danger" ></span>
             </div>
-            <div class="form-group">
-                <label asp-for="RegionStartId"  class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="RegionStartId" class="control-label w-25"></label>
                 <select id="RegionStartIdSelect" asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId">
                     <option selected disabled="true">Выберите объект начала</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label asp-for="RegionEndId" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="RegionEndId" class="control-label w-25"></label>
                 <select id="RegionEndIdSelect" asp-for="RegionEndId" class="form-control" asp-items="ViewBag.RegionEndId">
                     <option selected disabled="true">Выберите объект конца</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label asp-for="RegionControlId" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="RegionControlId" class="control-label w-25"></label>
                 <select id="RegionControlIdSelect" asp-for="RegionControlId" class="form-control" asp-items="ViewBag.RegionControlId">
                     <option selected disabled="true">Выберите контрольный объект</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Name" class="control-label w-25"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SignDouble" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="SignDouble" class="control-label w-25"></label>
                 <input asp-for="SignDouble" class="form-control" placeholder="0" />
                 <span asp-validation-for="SignDouble" class="text-danger"></span>
          
             </div>
-            <div class="form-group">
-                <label asp-for="TieInPlace" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="TieInPlace" class="control-label w-25"></label>
                 <input asp-for="TieInPlace" class="form-control" type="number" maxlength="10" placeholder="0" />
                 <span asp-validation-for="TieInPlace" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Length" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Length" class="control-label w-25"></label>
                 <input asp-for="Length" class="form-control" />
                 <span asp-validation-for="Length" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OptimizedLength" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="OptimizedLength" class="control-label w-25"></label>
                 <input asp-for="OptimizedLength" class="form-control" />
                 <span asp-validation-for="OptimizedLength" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Date" class="control-label w-25"></label>
                 <input type="date" asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Purpose" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Purpose" class="control-label w-25"></label>
                 <input asp-for="Purpose" class="form-control" />
                 <span asp-validation-for="Purpose" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TransportedMedium" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="TransportedMedium" class="control-label w-25"></label>
                 <input asp-for="TransportedMedium" class="form-control" />
                 <span asp-validation-for="TransportedMedium" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Category" class="control-label w-25"></label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FlowsheetNumber" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="FlowsheetNumber" class="control-label w-25"></label>
                 <input asp-for="FlowsheetNumber" class="form-control" />
                 <span asp-validation-for="FlowsheetNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Note" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Note" class="control-label w-25"></label>
                 <input asp-for="Note" class="form-control" />
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DebitWater" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="DebitWater" class="control-label w-25"></label>
                 <input asp-for="DebitWater" class="form-control" />
                 <span asp-validation-for="DebitWater" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DebitOil" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="DebitOil" class="control-label w-25"></label>
                 <input asp-for="DebitOil" class="form-control" />
                 <span asp-validation-for="DebitOil" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="State" class="control-label w-25"></label>
                 <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Temperature" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Temperature" class="control-label w-25"></label>
                 <input asp-for="Temperature" class="form-control" />
                 <span asp-validation-for="Temperature" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PFact" class="control-label"></label>
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="PFact" class="control-label w-25"></label>
                 <input asp-for="PFact" class="form-control" />
                 <span asp-validation-for="PFact" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PCalculated" class="control-label"></label>
-                <input asp-for="PCalculated" class="form-control" />
+            <div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="PCalculated" class="control-label w-25"></label>
+                <input asp-for="PCalculated" class="form-control"/>
                 <span asp-validation-for="PCalculated" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-primary" />
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end">
+                <input type="submit" value="Сохранить" class="btn btn-dark me-md-2" />
+                <a asp-action="Index"> <input value="Закрыть" class="btn btn-dark" /></a>
             </div>
         </form>
     </div>
 </div>
-
+<!--
 <div>
     <a asp-action="Index">Вернуться обратно</a>
 </div>
-
+-->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
