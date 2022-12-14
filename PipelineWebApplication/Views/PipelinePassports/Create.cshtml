@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Создать</h1>
 
-<h4>PipelinePassport</h4>
+<h4>Участки трубопровода</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -71,14 +71,14 @@
                 <span asp-validation-for="Diameter" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ТолщинаСтенки" class="control-label"></label>
-                <input asp-for="ТолщинаСтенки" class="form-control" />
-                <span asp-validation-for="ТолщинаСтенки" class="text-danger"></span>
+                <label asp-for="WallThickness" class="control-label"></label>
+                <input asp-for="WallThickness" class="form-control" />
+                <span asp-validation-for="WallThickness" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ГлубинаУкладки" class="control-label"></label>
-                <input asp-for="ГлубинаУкладки" class="form-control" />
-                <span asp-validation-for="ГлубинаУкладки" class="text-danger"></span>
+                <label asp-for="PavingDepth" class="control-label"></label>
+                <input asp-for="PavingDepth" class="form-control" />
+                <span asp-validation-for="PavingDepth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateInternalCoating" class="control-label"></label>
@@ -86,24 +86,24 @@
                 <span asp-validation-for="DateInternalCoating" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="НаружноеПокрытие" class="control-label"></label>
-                <input asp-for="НаружноеПокрытие" class="form-control" />
-                <span asp-validation-for="НаружноеПокрытие" class="text-danger"></span>
+                <label asp-for="OutdoorCoating" class="control-label"></label>
+                <input asp-for="OutdoorCoating" class="form-control" />
+                <span asp-validation-for="OutdoorCoating" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ВидСтроительства" class="control-label"></label>
-                <input asp-for="ВидСтроительства" class="form-control" />
-                <span asp-validation-for="ВидСтроительства" class="text-danger"></span>
+                <label asp-for="TypeOfConstruction" class="control-label"></label>
+                <input asp-for="TypeOfConstruction" class="form-control" />
+                <span asp-validation-for="TypeOfConstruction" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="НаличиеОтклоненияОтПроекта" class="control-label"></label>
-                <input asp-for="НаличиеОтклоненияОтПроекта" class="form-control" />
-                <span asp-validation-for="НаличиеОтклоненияОтПроекта" class="text-danger"></span>
+                <label asp-for="Deviation" class="control-label"></label>
+                <input asp-for="Deviation" class="form-control" />
+                <span asp-validation-for="Deviation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="СтоимостьСтроительства" class="control-label"></label>
-                <input asp-for="СтоимостьСтроительства" class="form-control" />
-                <span asp-validation-for="СтоимостьСтроительства" class="text-danger"></span>
+                <label asp-for="ConstructionCost" class="control-label"></label>
+                <input asp-for="ConstructionCost" class="form-control" />
+                <span asp-validation-for="ConstructionCost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Note" class="control-label"></label>
@@ -111,34 +111,34 @@
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ЗаменаСтыков1" class="control-label"></label>
-                <input asp-for="ЗаменаСтыков1" class="form-control" />
-                <span asp-validation-for="ЗаменаСтыков1" class="text-danger"></span>
+                <label asp-for="JointReplacement1" class="control-label"></label>
+                <input asp-for="JointReplacement1" class="form-control" />
+                <span asp-validation-for="JointReplacement1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ЗаменаСтыков2" class="control-label"></label>
-                <input asp-for="ЗаменаСтыков2" class="form-control" />
-                <span asp-validation-for="ЗаменаСтыков2" class="text-danger"></span>
+                <label asp-for="JointReplacement2" class="control-label"></label>
+                <input asp-for="JointReplacement2" class="form-control" />
+                <span asp-validation-for="JointReplacement2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Количество" class="control-label"></label>
-                <input asp-for="Количество" class="form-control" />
-                <span asp-validation-for="Количество" class="text-danger"></span>
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ДатаЗаменыСтыков" class="control-label"></label>
-                <input type="date" asp-for="ДатаЗаменыСтыков" class="form-control" />
-                <span asp-validation-for="ДатаЗаменыСтыков" class="text-danger"></span>
+                <label asp-for="JointReplacementDate" class="control-label"></label>
+                <input type="date" asp-for="JointReplacementDate" class="form-control" />
+                <span asp-validation-for="JointReplacementDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Закрыть</a>
 </div>
 
 @section Scripts {

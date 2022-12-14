@@ -91,7 +91,7 @@ public partial class PipelineAccountingContext : DbContext
             entity.Property(e => e.LetterNumber).HasMaxLength(50);
             entity.Property(e => e.PathFile).HasMaxLength(50);
             entity.Property(e => e.Salary).HasColumnType("money");
-            entity.Property(e => e.РегНомерЗаклРостехнадзоре).HasMaxLength(20);
+            entity.Property(e => e.RegNumberOfRostekhnadzor).HasMaxLength(20);
 
             entity.HasOne(d => d.ExpertOrganization).WithMany(p => p.DiagnosticsRevisionPipelines)
                 .HasForeignKey(d => d.ExpertOrganizationId)
@@ -232,13 +232,13 @@ public partial class PipelineAccountingContext : DbContext
             entity.Property(e => e.PlotEnd).HasMaxLength(50);
             entity.Property(e => e.PlotStart).HasMaxLength(50);
             entity.Property(e => e.Status).HasMaxLength(50);
-            entity.Property(e => e.ВидСтроительства)
+            entity.Property(e => e.TypeOfConstruction)
                 .HasMaxLength(10)
                 .IsFixedLength();
-            entity.Property(e => e.НаружноеПокрытие)
+            entity.Property(e => e.OutdoorCoating)
                 .HasMaxLength(10)
                 .IsFixedLength();
-            entity.Property(e => e.СтоимостьСтроительства).HasColumnType("money");
+            entity.Property(e => e.ConstructionCost).HasColumnType("money");
 
             entity.HasOne(d => d.BuildingCompany).WithMany(p => p.PipelinePassports)
                 .HasForeignKey(d => d.BuildingCompanyId)

@@ -96,13 +96,13 @@ public partial class PipelinePassport
     /// толщ стенки
     /// </summary>
     [Display(Name = "Толщина стенки")]
-    public double? ТолщинаСтенки { get; set; }
+    public double? WallThickness { get; set; }
 
     /// <summary>
     /// глубина укладки
     /// </summary>
     [Display(Name = "Глубина укладки")]
-    public double? ГлубинаУкладки { get; set; }
+    public double? PavingDepth { get; set; }
 
     /// <summary>
     /// Дата нанесения внешнего покрытия
@@ -114,25 +114,25 @@ public partial class PipelinePassport
     /// наруж покрытие
     /// </summary>
     [Display(Name = "Наружнее покрытие")]
-    public string? НаружноеПокрытие { get; set; }
+    public string? OutdoorCoating { get; set; }
 
     /// <summary>
     /// вид строит
     /// </summary>
     [Display(Name = "Вид строительства")]
-    public string? ВидСтроительства { get; set; }
+    public string? TypeOfConstruction { get; set; }
 
     /// <summary>
     /// налич откл от проекта
     /// </summary>
     [Display(Name = "Наличие отклонения от проекта")]
-    public bool? НаличиеОтклоненияОтПроекта { get; set; }
+    public bool? Deviation { get; set; }
 
     /// <summary>
     /// стоимость строительства
     /// </summary>
     [Display(Name = "Стоимость строительства")]
-    public decimal? СтоимостьСтроительства { get; set; }
+    public decimal? ConstructionCost { get; set; }
 
     /// <summary>
     /// примечание
@@ -144,37 +144,39 @@ public partial class PipelinePassport
     /// замена
     /// </summary>
     [Display(Name = "Замена стыков с")]
-    public int? ЗаменаСтыков1 { get; set; }
+    public int? JointReplacement1 { get; set; }
 
     /// <summary>
     /// с какого по какое
     /// </summary>
     [Display(Name = "по")]
-    public int? ЗаменаСтыков2 { get; set; }
+    public int? JointReplacement2 { get; set; }
 
     /// <summary>
     /// количество стыков
     /// </summary>
     [Display(Name = "в количестве, шт.")]
-    public int? Количество { get; set; }
+    public int? Amount { get; set; }
 
     /// <summary>
     /// дата замены стыков
     /// </summary>
     [Display(Name = "Дата замены стыков")]
-    public DateOnly? ДатаЗаменыСтыков { get; set; }
+    public DateOnly? JointReplacementDate { get; set; }
 
+    [Display (Name ="Строительная организация")]
     public virtual BuildingСompany? BuildingCompany { get; set; }
 
+    [Display (Name = "Завод-изготовитель МПТ(МПТ-К)")]
     public virtual Factory? FactoryMpt { get; set; }
-
+    [Display(Name = "Завод-изготовитель трубной продукции")]
     public virtual Factory? FactoryPipe { get; set; }
 
     public virtual InternalСoating? InternalCoating { get; set; }
-
+    [Display(Name = "Материал")]
     public virtual Material? Material { get; set; }
-
+    [Display(Name = "Тип трубы")]
     public virtual PipeType? PipeType { get; set; }
-
+    [Display(Name = "Трубопровод")]
     public virtual PipelineDatum? PipelineData { get; set; }
 }

@@ -14,7 +14,7 @@
     <p>
         <label for="PipelineDataId" class="control-label"></label>
         <select name="PipelineName" for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
-        <input type="submit" value="Filter" />
+        <input type="submit" value="Фильтр" />
     </p>
 </form>
 <table class="table">
@@ -39,40 +39,40 @@
                 @Html.DisplayNameFor(model => model.Diameter)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ТолщинаСтенки)
+                @Html.DisplayNameFor(model => model.WallThickness)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ГлубинаУкладки)
+                @Html.DisplayNameFor(model => model.PavingDepth)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateInternalCoating)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.НаружноеПокрытие)
+                @Html.DisplayNameFor(model => model.OutdoorCoating)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ВидСтроительства)
+                @Html.DisplayNameFor(model => model.TypeOfConstruction)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.НаличиеОтклоненияОтПроекта)
+                @Html.DisplayNameFor(model => model.Deviation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.СтоимостьСтроительства)
+                @Html.DisplayNameFor(model => model.ConstructionCost)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Note)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ЗаменаСтыков1)
+                @Html.DisplayNameFor(model => model.JointReplacement1)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ЗаменаСтыков2)
+                @Html.DisplayNameFor(model => model.JointReplacement2)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Количество)
+                @Html.DisplayNameFor(model => model.Amount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ДатаЗаменыСтыков)
+                @Html.DisplayNameFor(model => model.JointReplacementDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BuildingCompany)
@@ -120,66 +120,66 @@
                 @Html.DisplayFor(modelItem => item.Diameter)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ТолщинаСтенки)
+                @Html.DisplayFor(modelItem => item.WallThickness)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ГлубинаУкладки)
+                @Html.DisplayFor(modelItem => item.PavingDepth)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateInternalCoating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.НаружноеПокрытие)
+                @Html.DisplayFor(modelItem => item.OutdoorCoating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ВидСтроительства)
+                @Html.DisplayFor(modelItem => item.TypeOfConstruction)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.НаличиеОтклоненияОтПроекта)
+                @Html.DisplayFor(modelItem => item.Deviation)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.СтоимостьСтроительства)
+                @Html.DisplayFor(modelItem => item.ConstructionCost)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ЗаменаСтыков1)
+                @Html.DisplayFor(modelItem => item.JointReplacement1)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ЗаменаСтыков2)
+                @Html.DisplayFor(modelItem => item.JointReplacement2)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Количество)
+                @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ДатаЗаменыСтыков)
+                @Html.DisplayFor(modelItem => item.JointReplacementDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BuildingCompany.Id)
+                @Html.DisplayFor(modelItem => item.BuildingCompany.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FactoryMpt.Id)
+                @Html.DisplayFor(modelItem => item.FactoryMpt.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FactoryPipe.Id)
+                @Html.DisplayFor(modelItem => item.FactoryPipe.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.InternalCoating.Id)
+                @Html.DisplayFor(modelItem => item.InternalCoating.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Material.Id)
+                @Html.DisplayFor(modelItem => item.Material.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PipeType.Id)
+                @Html.DisplayFor(modelItem => item.PipeType.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PipelineData.Id)
+                @Html.DisplayFor(modelItem => item.PipelineData.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Подробности</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }

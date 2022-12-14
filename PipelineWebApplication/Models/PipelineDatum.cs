@@ -146,17 +146,20 @@ public partial class PipelineDatum
     /// </summary>
     public bool IsDeleted { get; set; }
 
+    [Display (Name="Бригада")]
     public virtual Brigade? Brigade { get; set; }
 
     public virtual ICollection<DiagnosticsRevisionPipeline> DiagnosticsRevisionPipelines { get; } = new List<DiagnosticsRevisionPipeline>();
-
+    [Display(Name ="Месторождение")]
     public virtual Field? Field { get; set; }
 
     public virtual ICollection<PipelinePassport> PipelinePassports { get; } = new List<PipelinePassport>();
 
+    [Display (Name="Контрольный объект")]
     public virtual Region? RegionControl { get; set; }
 
+    [Display (Name ="Объект конца")]
     public virtual Region? RegionEnd { get; set; }
-
+    [Display (Name="Объект начала")]
     public virtual Region? RegionStart { get; set; }
 }

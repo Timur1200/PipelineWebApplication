@@ -92,7 +92,7 @@ namespace PipelineWebApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FactoryMptid,FactoryPipeId,BuildingCompanyId,MaterialId,InternalCoatingId,PipeTypeId,PipelineDataId,PlotStart,PlotEnd,Lenght,Date,Status,Diameter,ТолщинаСтенки,ГлубинаУкладки,DateInternalCoating,НаружноеПокрытие,ВидСтроительства,НаличиеОтклоненияОтПроекта,СтоимостьСтроительства,Note,ЗаменаСтыков1,ЗаменаСтыков2,Количество,ДатаЗаменыСтыков")] PipelinePassport pipelinePassport)
+        public async Task<IActionResult> Create([Bind("Id,FactoryMptid,FactoryPipeId,BuildingCompanyId,MaterialId,InternalCoatingId,PipeTypeId,PipelineDataId,PlotStart,PlotEnd,Lenght,Date,Status,Diameter,WallThickness,PavingDepth,DateInternalCoating,OutdoorCoating,TypeOfConstruction,Deviation,ConstructionCost,Note,JointReplacement1,JointReplacement2,Amount,JointReplacementDate")] PipelinePassport pipelinePassport)
         {
             if (ModelState.IsValid)
             {
@@ -138,7 +138,7 @@ namespace PipelineWebApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FactoryMptid,FactoryPipeId,BuildingCompanyId,MaterialId,InternalCoatingId,PipeTypeId,PipelineDataId,PlotStart,PlotEnd,Lenght,Date,Status,Diameter,ТолщинаСтенки,ГлубинаУкладки,DateInternalCoating,НаружноеПокрытие,ВидСтроительства,НаличиеОтклоненияОтПроекта,СтоимостьСтроительства,Note,ЗаменаСтыков1,ЗаменаСтыков2,Количество,ДатаЗаменыСтыков")] PipelinePassport pipelinePassport)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FactoryMptid,FactoryPipeId,BuildingCompanyId,MaterialId,InternalCoatingId,PipeTypeId,PipelineDataId,PlotStart,PlotEnd,Lenght,Date,Status,Diameter,WallThickness,PavingDepth,DateInternalCoating,OutdoorCoating,TypeOfConstruction,Deviation,ConstructionCost,Note,JointReplacement1,JointReplacement2,Amount,JointReplacementDate")] PipelinePassport pipelinePassport)
         {
             if (id != pipelinePassport.Id)
             {

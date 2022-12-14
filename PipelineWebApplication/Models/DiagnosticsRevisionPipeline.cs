@@ -19,9 +19,9 @@ public partial class DiagnosticsRevisionPipeline
 
     public DateOnly? NextDateStudy { get; set; }
 
-    public int? КоличествоШурфов { get; set; }
+    public int? NumberOfPits { get; set; }
 
-    public string? РегНомерЗаклРостехнадзоре { get; set; }
+    public string? RegNumberOfRostekhnadzor { get; set; }
 
     public decimal? Salary { get; set; }
 
