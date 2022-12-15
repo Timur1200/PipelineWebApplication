@@ -4,151 +4,147 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Редактировать</h1>
 
-<h4>PipelinePassport</h4>
+<h4>Данные по участкам трубопровода</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="FactoryMptid" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="FactoryMptid" class="control-label w-25"></label>
                 <select asp-for="FactoryMptid" class="form-control" asp-items="ViewBag.FactoryMptid"></select>
                 <span asp-validation-for="FactoryMptid" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FactoryPipeId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="FactoryPipeId" class="control-label w-25"></label>
                 <select asp-for="FactoryPipeId" class="form-control" asp-items="ViewBag.FactoryPipeId"></select>
                 <span asp-validation-for="FactoryPipeId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="BuildingCompanyId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="BuildingCompanyId" class="control-label w-25"></label>
                 <select asp-for="BuildingCompanyId" class="form-control" asp-items="ViewBag.BuildingCompanyId"></select>
                 <span asp-validation-for="BuildingCompanyId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaterialId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="MaterialId" class="control-label w-25"></label>
                 <select asp-for="MaterialId" class="form-control" asp-items="ViewBag.MaterialId"></select>
                 <span asp-validation-for="MaterialId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="InternalCoatingId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="InternalCoatingId" class="control-label w-25"></label>
                 <select asp-for="InternalCoatingId" class="form-control" asp-items="ViewBag.InternalCoatingId"></select>
                 <span asp-validation-for="InternalCoatingId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PipeTypeId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="PipeTypeId" class="control-label w-25"></label>
                 <select asp-for="PipeTypeId" class="form-control" asp-items="ViewBag.PipeTypeId"></select>
                 <span asp-validation-for="PipeTypeId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PipelineDataId" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="PipelineDataId" class="control-label w-25"></label>
                 <select asp-for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
                 <span asp-validation-for="PipelineDataId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PlotStart" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="PlotStart" class="control-label w-25"></label>
                 <input asp-for="PlotStart" class="form-control" />
                 <span asp-validation-for="PlotStart" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PlotEnd" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="PlotEnd" class="control-label w-25"></label>
                 <input asp-for="PlotEnd" class="form-control" />
                 <span asp-validation-for="PlotEnd" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Lenght" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Lenght" class="control-label w-25"></label>
                 <input asp-for="Lenght" class="form-control" />
                 <span asp-validation-for="Lenght" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Date" class="control-label w-25"></label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Status" class="control-label w-25"></label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Diameter" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Diameter" class="control-label w-25"></label>
                 <input asp-for="Diameter" class="form-control" />
                 <span asp-validation-for="Diameter" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="WallThickness" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="WallThickness" class="control-label w-25"></label>
                 <input asp-for="WallThickness" class="form-control" />
                 <span asp-validation-for="WallThickness" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PavingDepth" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="PavingDepth" class="control-label w-25"></label>
                 <input asp-for="PavingDepth" class="form-control" />
                 <span asp-validation-for="PavingDepth" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DateInternalCoating" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="DateInternalCoating" class="control-label w-25"></label>
                 <input asp-for="DateInternalCoating" class="form-control" />
                 <span asp-validation-for="DateInternalCoating" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OutdoorCoating" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="OutdoorCoating" class="control-label w-25"></label>
                 <input asp-for="OutdoorCoating" class="form-control" />
                 <span asp-validation-for="OutdoorCoating" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TypeOfConstruction" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="TypeOfConstruction" class="control-label w-25"></label>
                 <input asp-for="TypeOfConstruction" class="form-control" />
                 <span asp-validation-for="TypeOfConstruction" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Deviation" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Deviation" class="control-label w-25"></label>
                 <input asp-for="Deviation" class="form-control" />
                 <span asp-validation-for="Deviation" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ConstructionCost" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="ConstructionCost" class="control-label w-25"></label>
                 <input asp-for="ConstructionCost" class="form-control" />
                 <span asp-validation-for="ConstructionCost" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Note" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Note" class="control-label w-25"></label>
                 <input asp-for="Note" class="form-control" />
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="JointReplacement1" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="JointReplacement1" class="control-label w-25"></label>
                 <input asp-for="JointReplacement1" class="form-control" />
                 <span asp-validation-for="JointReplacement1" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="JointReplacement2" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="JointReplacement2" class="control-label w-25"></label>
                 <input asp-for="JointReplacement2" class="form-control" />
                 <span asp-validation-for="JointReplacement2" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="Amount" class="control-label w-25"></label>
                 <input asp-for="Amount" class="form-control" />
                 <span asp-validation-for="Amount" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="JointReplacementDate" class="control-label"></label>
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                <label asp-for="JointReplacementDate" class="control-label w-25"></label>
                 <input asp-for="JointReplacementDate" class="form-control" />
                 <span asp-validation-for="JointReplacementDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end">
+                <input type="submit" value="Сохранить" class="btn btn-success me-md-2" />
+                <a asp-action="Index"><input value="Закрыть" class="btn btn-success" /></a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
