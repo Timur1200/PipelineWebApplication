@@ -11,6 +11,9 @@ using PipelineWebApplication.Models.ViewModel;
 
 namespace PipelineWebApplication.Controllers
 {
+    /// <summary>
+    /// Контроллер участка трубопровода
+    /// </summary>
     public class PipelinePassportsController : Controller
     {
         private readonly PipelineAccountingContext _context;
@@ -20,31 +23,35 @@ namespace PipelineWebApplication.Controllers
             _context = context;
         }
 
+        // Выполненяет Get запрос Index
         // GET: PipelinePassports
         public async Task<IActionResult> Index(int? id)
         {
-            
+            // передает данные в представление для раскрывающегося списка
             ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
 
-            IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports.Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
-                 .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType).Include(p => p.PipelineData);
-            
-            
-            
-            
+            IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports.
+                Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
+                 .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType)
+                 .Include(p => p.PipelineData);
+            // получаем данные по участкам в трубопроводе      
             if (id != null)
             {
                 pipelineAccountingContext = pipelineAccountingContext.Where(p => p.PipelineDataId == id);
-            }   
+            }
+            // передаем модель данных в представление
             return View(await pipelineAccountingContext.ToListAsync());
         }
         [HttpPost]
+        // Выполняет Post запрос Index. Производит фильтрацию данных и выводит отфильтрованные данные в представление
         public async Task<IActionResult> Index(string PipelineName, bool notUsed)
         {
             int id = Convert.ToInt32(PipelineName);
             ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
-            IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports.Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
-                 .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType).Include(p => p.PipelineData).Where(q=>q.PipelineDataId == id);
+            IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports
+                .Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
+                 .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType)
+                 .Include(p => p.PipelineData).Where(q=>q.PipelineDataId == id);
             return View(await pipelineAccountingContext.ToListAsync());
         }
 

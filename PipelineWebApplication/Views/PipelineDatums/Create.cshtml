@@ -5,10 +5,6 @@
    
 }
 
-
-   
-
-
 <h1>Создать</h1>
 
 <h4>Данные трубопровода и их технических характеристик</h4>
@@ -32,7 +28,7 @@
             </div>
             <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="RegionStartId" class="control-label w-25"></label>
-                <select id="RegionStartIdSelect" asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId">
+                <select onchange="" id="RegionStartIdSelect" asp-for="RegionStartId" class="form-control" asp-items="ViewBag.RegionStartId">
                     <option selected disabled="true">Выберите объект начала</option>
                 </select>
             </div>
@@ -48,11 +44,11 @@
                     <option selected disabled="true">Выберите контрольный объект</option>
                 </select>
             </div>
-            <div class="form-group d-flex justify-content-between mb-3">
-                <label asp-for="Name" class="control-label w-25"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+            @*<div class="form-group d-flex justify-content-between mb-3">
+                <label asp-for="Name" class="control-label w-25"></label>*@
+                <input type="hidden"  id="PipelineName" asp-for="Name" class="form-control" value="1" />
+                @*<span asp-validation-for="Name" class="text-danger"></span>
+            </div>*@
             <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="SignDouble" class="control-label w-25"></label>
                 <input asp-for="SignDouble" class="form-control" placeholder="0" />
