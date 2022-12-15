@@ -62,7 +62,7 @@
             </div>
             <div class="form-group form-group d-flex justify-content-between mb-3">
                 <label asp-for="Status" class="control-label w-25"></label>
-                <input type="checkbox" asp-for="Status" class="form-control" />
+                <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group form-group d-flex justify-content-between mb-3">
@@ -97,7 +97,10 @@
             </div>
             <div class="form-group form-group d-flex justify-content-between mb-3">
                 <label asp-for="Deviation" class="control-label w-25"></label>
-                <input asp-for="Deviation" class="form-control" />
+                <select asp-for="Deviation" class="form-control">
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
                 <span asp-validation-for="Deviation" class="text-danger"></span>
             </div>
             <div class="form-group form-group d-flex justify-content-between mb-3">
