@@ -8,11 +8,11 @@
 <h1>Данные трубопровода</h1>
 
 <p>
-    <a asp-action="Create">Создать</a>
+    <a asp-action="Create"><button type="button" class="btn btn-success">Создать</button></a>
 </p>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="table-success">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -84,7 +84,7 @@
     </thead>
     <tbody> 
 @foreach (var item in Model) {
-        <tr>
+            <tr class="table-secondary">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

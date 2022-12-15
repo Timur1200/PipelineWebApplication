@@ -14,12 +14,12 @@
     <p>
         <label for="PipelineDataId" class="control-label"></label>
         <select name="PipelineName" for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
-        <input type="submit" value="Фильтр" />
+        <input type="submit" value="Фильтр" class="btn btn-success mt-2 justify-content-md-end d-grid gap-2 d-md-flex" />
     </p>
 </form>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="table-success">
             <th>
                 @Html.DisplayNameFor(model => model.PlotStart)
             </th>
@@ -100,7 +100,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr class="table-secondary">
             <td>
                 @Html.DisplayFor(modelItem => item.PlotStart)
             </td>
