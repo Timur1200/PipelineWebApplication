@@ -191,6 +191,7 @@ public partial class PipelinePassport
     [Display(Name = "Завод-изготовитель трубной продукции")]
     public virtual Factory? FactoryPipe { get; set; }
 
+    [Display(Name ="Внутренее покрытие")]
     public virtual InternalСoating? InternalCoating { get; set; }
     [Display(Name = "Материал")]
     public virtual Material? Material { get; set; }

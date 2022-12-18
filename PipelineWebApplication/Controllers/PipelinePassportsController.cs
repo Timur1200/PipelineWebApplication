@@ -22,24 +22,32 @@ namespace PipelineWebApplication.Controllers
         {
             _context = context;
         }
-
+        private void pipelineDataSelect()
+        {
+            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData.Where(q => q.IsDeleted == false), "Id", "Name");
+        }
         // Выполненяет Get запрос Index
         // GET: PipelinePassports
         public async Task<IActionResult> Index(int? id)
         {
             // передает данные в представление для раскрывающегося списка
-            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
+            pipelineDataSelect();
 
             IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports.
                 Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
                  .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType)
                  .Include(p => p.PipelineData);
             // получаем данные по участкам в трубопроводе      
-            if (id != null)
+            if (id == null)
+            {
+                var a = pipelineAccountingContext.FirstOrDefault();
+                List<PipelinePassport> pipelinePassports= new List<PipelinePassport>() {a};
+                return View(pipelinePassports);
+            }
+            else
             {
                 pipelineAccountingContext = pipelineAccountingContext.Where(p => p.PipelineDataId == id);
             }
-            // передаем модель данных в представление
             return View(await pipelineAccountingContext.ToListAsync());
         }
         [HttpPost]
@@ -47,7 +55,7 @@ namespace PipelineWebApplication.Controllers
         public async Task<IActionResult> Index(string PipelineName, bool notUsed)
         {
             int id = Convert.ToInt32(PipelineName);
-            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData, "Id", "Name");
+            pipelineDataSelect();
             IQueryable<PipelinePassport> pipelineAccountingContext = _context.PipelinePassports
                 .Include(p => p.BuildingCompany).Include(p => p.FactoryMpt).Include(p => p.FactoryPipe)
                  .Include(p => p.InternalCoating).Include(p => p.Material).Include(p => p.PipeType)

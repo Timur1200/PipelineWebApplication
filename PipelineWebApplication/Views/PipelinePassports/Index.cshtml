@@ -13,7 +13,9 @@
 <form  asp-action="Index">
     <p>
         <label for="PipelineDataId" class="control-label"></label>
-        <select name="PipelineName" for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId"></select>
+        <select name="PipelineName" for="PipelineDataId" class="form-control" asp-items="ViewBag.PipelineDataId">
+            
+        </select>
         <input type="submit" value="Фильтр" class="btn btn-success mt-2 justify-content-md-end d-grid gap-2 d-md-flex" />
     </p>
 </form>
