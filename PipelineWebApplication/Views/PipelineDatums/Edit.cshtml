@@ -1,7 +1,7 @@
 ﻿@model PipelineWebApplication.Models.PipelineDatum
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Редактирование";
 }
 
 <h1>Редактировать</h1>
@@ -33,36 +33,17 @@
                 <select asp-for="RegionEndId" class="form-control" asp-items="ViewBag.RegionEndId"></select>
                 <span asp-validation-for="RegionEndId" class="text-danger"></span>
             </div>
-            <div class="form-group form-group form-group d-flex justify-content-between mb-3">
-                <label asp-for="RegionControlId" class="control-label w-25"></label>
-                <select asp-for="RegionControlId" class="form-control" asp-items="ViewBag.RegionControlId"></select>
-                <span asp-validation-for="RegionControlId" class="text-danger"></span>
-            </div>
-            <div class="form-group form-group form-group d-flex justify-content-between mb-3">
-                <label asp-for="Name" class="control-label w-25"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group form-group form-group d-flex justify-content-between mb-3">
-                <label asp-for="SignDouble" class="control-label w-25"></label>
-                <input asp-for="SignDouble" class="form-control" />
-                <span asp-validation-for="SignDouble" class="text-danger"></span>
-            </div>
-            <div class="form-group form-group form-group d-flex justify-content-between mb-3">
-                <label asp-for="TieInPlace" class="control-label w-25"></label>
-                <input asp-for="TieInPlace" class="form-control" />
-                <span asp-validation-for="TieInPlace" class="text-danger"></span>
-            </div>
+           
+          
+            <input type="hidden" id="PipelineName" asp-for="Name" class="form-control"  />
+           
+            
             <div class="form-group form-group form-group d-flex justify-content-between mb-3">
                 <label asp-for="Length" class="control-label w-25"></label>
                 <input asp-for="Length" class="form-control" />
                 <span asp-validation-for="Length" class="text-danger"></span>
             </div>
-            <div class="form-group form-group form-group d-flex justify-content-between mb-3">
-                <label asp-for="OptimizedLength" class="control-label w-25"></label>
-                <input asp-for="OptimizedLength" class="form-control" />
-                <span asp-validation-for="OptimizedLength" class="text-danger"></span>
-            </div>
+           
             <div class="form-group form-group form-group d-flex justify-content-between mb-3">
                 <label asp-for="Date" class="control-label w-25"></label>
                 <input type="date" asp-for="Date" class="form-control" />

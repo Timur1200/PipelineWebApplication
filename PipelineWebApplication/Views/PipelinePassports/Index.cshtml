@@ -2,7 +2,7 @@
 
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "";
 }
 
 <h1>Данные по участкам трубопровда</h1>
@@ -20,6 +20,9 @@
 <table class="table">
     <thead>
         <tr class="table-success">
+            <th>
+                @Html.DisplayNameFor(model => model.PipelineData)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.PlotStart)
             </th>
@@ -62,18 +65,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Note)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JointReplacement1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JointReplacement2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JointReplacementDate)
-            </th>
+           
+           
             <th>
                 @Html.DisplayNameFor(model => model.BuildingCompany)
             </th>
@@ -92,15 +85,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.PipeType)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PipelineData)
-            </th>
+          
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
             <tr class="table-secondary">
+                <td>
+                    @Html.DisplayFor(modelItem => item.PipelineData.Name)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PlotStart)
             </td>
@@ -135,7 +129,7 @@
                 @Html.DisplayFor(modelItem => item.TypeOfConstruction)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Deviation)
+                @Html.DisplayFor(modelItem => item.DeviationToString)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ConstructionCost)
@@ -143,18 +137,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JointReplacement1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JointReplacement2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JointReplacementDate)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.BuildingCompany.Name)
             </td>
@@ -173,12 +156,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PipeType.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PipelineData.Name)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Подробности</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>

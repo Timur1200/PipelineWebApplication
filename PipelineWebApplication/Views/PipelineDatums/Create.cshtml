@@ -38,38 +38,38 @@
                     <option selected disabled="true">Выберите объект конца</option>
                 </select>
             </div>
-            <div class="form-group d-flex justify-content-between mb-3">
+           @* <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="RegionControlId" class="control-label w-25"></label>
                 <select id="RegionControlIdSelect" asp-for="RegionControlId" class="form-control" asp-items="ViewBag.RegionControlId">
                     <option selected disabled="true">Выберите контрольный объект</option>
                 </select>
-            </div>
+            </div>*@
             @*<div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="Name" class="control-label w-25"></label>*@
                 <input type="hidden"  id="PipelineName" asp-for="Name" class="form-control" value="1" />
                 @*<span asp-validation-for="Name" class="text-danger"></span>
             </div>*@
-            <div class="form-group d-flex justify-content-between mb-3">
+           @* <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="SignDouble" class="control-label w-25"></label>
                 <input asp-for="SignDouble" class="form-control" placeholder="0" />
                 <span asp-validation-for="SignDouble" class="text-danger"></span>
          
-            </div>
-            <div class="form-group d-flex justify-content-between mb-3">
+            </div>*@
+            @*<div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="TieInPlace" class="control-label w-25"></label>
                 <input asp-for="TieInPlace" class="form-control" type="number" maxlength="10" placeholder="0" />
                 <span asp-validation-for="TieInPlace" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="Length" class="control-label w-25"></label>
                 <input asp-for="Length" class="form-control" />
                 <span asp-validation-for="Length" class="text-danger"></span>
             </div>
-            <div class="form-group d-flex justify-content-between mb-3">
+           @* <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="OptimizedLength" class="control-label w-25"></label>
                 <input asp-for="OptimizedLength" class="form-control" />
                 <span asp-validation-for="OptimizedLength" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group d-flex justify-content-between mb-3">
                 <label asp-for="Date" class="control-label w-25"></label>
                 <input type="date" asp-for="Date" class="form-control" />

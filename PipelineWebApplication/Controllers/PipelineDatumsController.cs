@@ -102,6 +102,9 @@ namespace PipelineWebApplication.Controllers
             {
                 try
                 {
+                    string nameStart = _context.Regions.First(q => q.Id == pipelineDatum.RegionStartId).Name;
+                    string nameEnd = _context.Regions.First(q => q.Id == pipelineDatum.RegionEndId).Name;
+                    pipelineDatum.Name = $"{nameStart} - {nameEnd}";
                     _context.Update(pipelineDatum);
                     await _context.SaveChangesAsync();
                 }

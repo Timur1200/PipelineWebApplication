@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PipelineWebApplication.Models;
 
@@ -51,7 +52,7 @@ public partial class PipelinePassport
     public int? PipeTypeId { get; set; }
 
     /// <summary>
-    /// 
+    /// Данные трубопровода
     /// </summary>
     [Display(Name = "Данные трубопровода")]
     public int? PipelineDataId { get; set; }
@@ -127,11 +128,29 @@ public partial class PipelinePassport
     /// </summary>
     [Display(Name = "Наличие отклонения от проекта")]
     public bool? Deviation { get; set; }
+    [NotMapped]
+    [Display(Name = "Наличие отклонения от проекта")]
+    public string DeviationToString
+    {
+        get
+        {
+            string text;
+            if (Deviation.Value)
+            {
+                text = "Да";
+            }
+            else
+            {
+                text = "Нет";
+            }
+            return text;
+        }
+    }
 
     /// <summary>
     /// стоимость строительства
     /// </summary>
-    [Display(Name = "Стоимость строительства")]
+    [Display(Name = "Стоимость строительства (руб)")]
     public decimal? ConstructionCost { get; set; }
 
     /// <summary>
