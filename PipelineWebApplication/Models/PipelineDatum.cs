@@ -59,7 +59,7 @@ public partial class PipelineDatum
     /// <summary>
     /// длина
     /// </summary>
-    [Display(Name = "Длина")]
+    [Display(Name = "Длина (м)")]
     public double? Length { get; set; }
    
 
@@ -126,7 +126,7 @@ public partial class PipelineDatum
     /// <summary>
     /// температура
     /// </summary>
-    [Display(Name = "Температура")]
+    [Display(Name = "Температура (°C)")]
     public double? Temperature { get; set; }
 
     /// <summary>

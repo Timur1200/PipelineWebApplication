@@ -96,13 +96,13 @@ public partial class PipelinePassport
     /// <summary>
     /// толщ стенки
     /// </summary>
-    [Display(Name = "Толщина стенки")]
+    [Display(Name = "Толщина стенки (мм)")]
     public double? WallThickness { get; set; }
 
     /// <summary>
     /// глубина укладки
     /// </summary>
-    [Display(Name = "Глубина укладки")]
+    [Display(Name = "Глубина укладки (м)")]
     public double? PavingDepth { get; set; }
 
     /// <summary>
