@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,17 +21,19 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelineDatums
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var pipelineAccountingContext = _context.PipelineData.Include(p => p.Brigade).Include(p => p.Field).Include(p => p.RegionControl).Include(p => p.RegionEnd).Include(p => p.RegionStart).Where(q=>q.IsDeleted==false);
             return View(await pipelineAccountingContext.ToListAsync());
         }
 
-        
 
-     
+
+
 
         // GET: PipelineDatums/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["BrigadeId"] = new SelectList(_context.Brigades.Include(q=>q.Unit.Owner), "Id", "FullName");
@@ -66,6 +69,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelineDatums/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.PipelineData == null)
@@ -130,6 +134,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelineDatums/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.PipelineData == null)

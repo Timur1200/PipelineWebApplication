@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using PipelineWebApplication.Models;
 
-namespace PipelineWebApplication.Data;
+namespace PipelineWebApplication;
 
 public partial class PipelineAccountingContext : DbContext
 {
@@ -44,6 +43,8 @@ public partial class PipelineAccountingContext : DbContext
 
     public virtual DbSet<Region> Regions { get; set; }
 
+    public virtual DbSet<Role> Roles { get; set; }
+
     public virtual DbSet<Study> Studies { get; set; }
 
     public virtual DbSet<StudyControl> StudyControls { get; set; }
@@ -51,6 +52,8 @@ public partial class PipelineAccountingContext : DbContext
     public virtual DbSet<TypeControl> TypeControls { get; set; }
 
     public virtual DbSet<Unit> Units { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -88,10 +91,11 @@ public partial class PipelineAccountingContext : DbContext
             entity.HasIndex(e => e.StudyId, "IX_DiagnosticsRevisionPipelines_StudyId");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Conclusion).HasComment("Заключение");
             entity.Property(e => e.LetterNumber).HasMaxLength(50);
             entity.Property(e => e.PathFile).HasMaxLength(50);
-            entity.Property(e => e.Salary).HasColumnType("money");
             entity.Property(e => e.RegNumberOfRostekhnadzor).HasMaxLength(20);
+            entity.Property(e => e.Salary).HasColumnType("money");
 
             entity.HasOne(d => d.ExpertOrganization).WithMany(p => p.DiagnosticsRevisionPipelines)
                 .HasForeignKey(d => d.ExpertOrganizationId)
@@ -228,17 +232,17 @@ public partial class PipelineAccountingContext : DbContext
 
             entity.HasIndex(e => e.PipelineDataId, "IX_PipelinePassport_PipelineDataId");
 
+            entity.Property(e => e.ConstructionCost).HasColumnType("money");
             entity.Property(e => e.FactoryMptid).HasColumnName("FactoryMPTId");
+            entity.Property(e => e.OutdoorCoating)
+                .HasMaxLength(10)
+                .IsFixedLength();
             entity.Property(e => e.PlotEnd).HasMaxLength(50);
             entity.Property(e => e.PlotStart).HasMaxLength(50);
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.TypeOfConstruction)
                 .HasMaxLength(10)
                 .IsFixedLength();
-            entity.Property(e => e.OutdoorCoating)
-                .HasMaxLength(10)
-                .IsFixedLength();
-            entity.Property(e => e.ConstructionCost).HasColumnType("money");
 
             entity.HasOne(d => d.BuildingCompany).WithMany(p => p.PipelinePassports)
                 .HasForeignKey(d => d.BuildingCompanyId)
@@ -293,6 +297,16 @@ public partial class PipelineAccountingContext : DbContext
                 .HasConstraintName("FK_Region_Owner");
         });
 
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("Role_pkey");
+
+            entity.ToTable("Role");
+
+            entity.Property(e => e.Id).UseIdentityAlwaysColumn();
+            entity.Property(e => e.Name).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<Study>(entity =>
         {
             entity.ToTable("Study");
@@ -329,6 +343,24 @@ public partial class PipelineAccountingContext : DbContext
                 .HasForeignKey(d => d.OwnerId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Unit_Owner");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("User_pkey");
+
+            entity.ToTable("User");
+
+            entity.Property(e => e.Id).UseIdentityAlwaysColumn();
+            entity.Property(e => e.Login).HasMaxLength(50);
+            entity.Property(e => e.MiddleName).HasMaxLength(50);
+            entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Pass).HasMaxLength(256);
+            entity.Property(e => e.SurName).HasMaxLength(50);
+
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
+                .HasForeignKey(d => d.RoleId)
+                .HasConstraintName("FK_User_Role");
         });
 
         OnModelCreatingPartial(modelBuilder);

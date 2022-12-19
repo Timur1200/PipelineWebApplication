@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,7 @@ namespace PipelineWebApplication.Controllers
         }
         // Выполненяет Get запрос Index
         // GET: PipelinePassports
+        [Authorize]
         public async Task<IActionResult> Index(int? id)
         {
             // передает данные в представление для раскрывающегося списка
@@ -64,6 +66,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelinePassports/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.PipelinePassports == null)
@@ -89,6 +92,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelinePassports/Create
+        [Authorize]
         public IActionResult Create()
         {
 
@@ -126,6 +130,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelinePassports/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.PipelinePassports == null)
@@ -191,6 +196,7 @@ namespace PipelineWebApplication.Controllers
         }
 
         // GET: PipelinePassports/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.PipelinePassports == null)

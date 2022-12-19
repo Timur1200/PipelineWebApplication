@@ -24,7 +24,10 @@ public partial class DiagnosticsRevisionPipeline
     public string? RegNumberOfRostekhnadzor { get; set; }
 
     public decimal? Salary { get; set; }
-
+    /// <summary>
+    /// Заключение
+    /// </summary>
+    public string? Conclusion { get; set; }
     public string? LetterNumber { get; set; }
 
     public DateOnly? LetterDate { get; set; }

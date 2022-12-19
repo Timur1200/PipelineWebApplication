@@ -2,7 +2,7 @@ global using PipelineWebApplication.Models;
 global using PipelineWebApplication.Data;
 global using PipelineWebApplication.Models.ViewModel;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace PipelineWebApplication
 {
@@ -14,6 +14,12 @@ namespace PipelineWebApplication
             builder.Services.AddDbContext<PipelineAccountingContext>(options =>
               options.UseNpgsql(builder.Configuration.GetConnectionString("PipelineContext") ?? throw new InvalidOperationException("Connection string 'WebApplication1TestContext' not found.")));
             // Add services to the container.
+            // установка конфигурации подключения
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -33,7 +39,7 @@ namespace PipelineWebApplication
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();    // аутентификация
             app.UseAuthorization();
 
             app.MapControllerRoute(
