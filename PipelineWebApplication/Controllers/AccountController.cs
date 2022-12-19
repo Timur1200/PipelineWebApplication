@@ -27,7 +27,7 @@ namespace PipelineWebApplication.Controllers
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Login == model.Login && u.Pass == model.Pass);
                 if (user != null)
                 {
-                    await Authenticate(model.Login); // аутентификация
+                    await Authenticate($"{user.SurName} {user.Name}") ; // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
