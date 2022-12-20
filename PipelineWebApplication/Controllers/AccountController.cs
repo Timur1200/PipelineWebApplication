@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using PipelineWebApplication.Service;
 
 namespace PipelineWebApplication.Controllers
 {
@@ -24,7 +25,7 @@ namespace PipelineWebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _context.Users.FirstOrDefaultAsync(u => u.Login == model.Login && u.Pass == model.Pass);
+                User user = await _context.Users.FirstOrDefaultAsync(u => u.Login == model.Login && u.Pass == HashPasswordHelper.HashPassword(model.Pass));
                 if (user != null)
                 {
                     await Authenticate($"{user.SurName} {user.Name}") ; // аутентификация
