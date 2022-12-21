@@ -25,7 +25,7 @@ namespace PipelineWebApplication.Controllers
         }
         private void pipelineDataSelect()
         {
-            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData.Where(q => q.IsDeleted == false), "Id", "Name");
+            ViewData["PipelineDataId"] = new SelectList(_context.PipelineData.Where(q => q.IsDeleted == false).OrderByDescending(q => q.Id), "Id", "Name");
         }
         // Выполненяет Get запрос Index
         // GET: PipelinePassports

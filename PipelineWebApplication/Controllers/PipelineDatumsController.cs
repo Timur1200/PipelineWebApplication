@@ -24,7 +24,7 @@ namespace PipelineWebApplication.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var pipelineAccountingContext = _context.PipelineData.Include(p => p.Brigade).Include(p => p.Field).Include(p => p.RegionControl).Include(p => p.RegionEnd).Include(p => p.RegionStart).Where(q=>q.IsDeleted==false);
+            var pipelineAccountingContext = _context.PipelineData.Include(p => p.Brigade).Include(p => p.Field).Include(p => p.RegionControl).Include(p => p.RegionEnd).Include(p => p.RegionStart).Where(q=>q.IsDeleted==false).OrderByDescending(q=>q.Id);
             return View(await pipelineAccountingContext.ToListAsync());
         }
 
